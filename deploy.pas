@@ -191,7 +191,7 @@ var
 begin
   DownloadFile := false;
   UserAgent := ExtractFileName(ParamStr(0));
-  HInet := InternetOpen(PChar(UserAgent), INTERNET_OPEN_TYPE_DIRECT, nil, nil, 0);
+  HInet := InternetOpen(PChar(UserAgent), INTERNET_OPEN_TYPE_PRECONFIG, nil, nil, 0);
   try
     HURL := InternetOpenUrl(HInet, PChar(URL), nil, 0, INTERNET_FLAG_DONT_CACHE + INTERNET_FLAG_KEEP_CONNECTION, 0);
     if Assigned(HURL) then
@@ -435,7 +435,7 @@ end;
 
 procedure TMyDeploy.WriteVersion;
 begin
-  writeln('deploy 1.0 : Copyright (c) 2021 Yoann LAMY');
+  writeln('deploy 1.1 : Copyright (c) 2021 Yoann LAMY');
   writeln();
 end;
 
